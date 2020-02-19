@@ -1,0 +1,9 @@
+<div class="container bg-gradient-info text-secondary">
+  <h1>Review a new restaurant</h1>
+  <%= render 'restaurants/form', restaurant: @restaurant, review: @review %>
+  <div>
+    <p><%= link_to restaurants_path do %></p>
+    <p class="m-0">Return to Restaurants</p>
+    <% end %>
+  </div>
+</div>

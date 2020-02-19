@@ -1,0 +1,22 @@
+<div class="container bg-gradient-info text-secondary">
+  <div class="justify-space-between p-4">
+    <h1>Restaurants</h1>
+  </div>
+    <div class="text-center p-4">
+      <%= link_to new_restaurant_path, class: "d-flex align-items-center" do %>
+      <%= image_tag "mac.jpeg", alt: "alttext", class: "avatar-square" %>
+      <p class="m-0"> Add new restaurant </p>
+      <% end %>
+    </div>
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card m-0 my-2 p-4">
+        <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+        <p><%= restaurant.category %></p>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.review %></p>
+        <p><%= restaurant.phone_number %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

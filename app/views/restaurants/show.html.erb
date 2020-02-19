@@ -1,0 +1,25 @@
+<div class="container bg-gradient-info text-secondary">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.review %></p>
+  <%= link_to 'Back to restaurants', root_path, class: 'btn btn-light' %>
+  <p>
+    <%= link_to edit_restaurant_path(@restaurant) do %>
+      <i class="fas fa-wrench"></i>
+    <% end %>
+  </p>
+  <p>
+    <%= link_to restaurant_path(@restaurant), method: :delete, data: { confirm: "Delete #{@restaurant.name}?" } do %>
+      <i class="fas fa-skull"></i>
+    <% end %>
+  </p>
+</div>
+
+<div class="card">
+  <% @restaurant.reviews.each do |review| %>
+  <p>Content: <%= review.content %></p>
+  <p>Rating: <%= review.rating %></p>
+  <% end %>
+
+</div>
